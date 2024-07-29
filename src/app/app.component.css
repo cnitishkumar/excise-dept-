@@ -1,0 +1,15 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    background-color: beige;
+    height: 100vh;
+    padding: 50px;
+   
+  }
+  
+  .example-full-width {
+    width: 100%;
+    
+  }
+  

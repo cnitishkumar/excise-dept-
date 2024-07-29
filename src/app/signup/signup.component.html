@@ -1,0 +1,120 @@
+<div class="signup-component">
+  <div class="form-container">
+    <div>
+      <h1 class="text-center" class="main-heading">TELANGANA EXCISE DEPARTMENT</h1>
+    </div>
+    <h2 class="form-heading">SIGNUP</h2>
+    <form class="form-el" [formGroup] ='signupForm' (ngSubmit) = 'onSubmit()'>
+      <div class="first-last-name-container" >
+        <div style="margin-right: 2px;">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control input-el"
+            id="firstname"
+            placeholder="First Name"
+            formControlName = 'firstname'
+            required
+          />
+          <label for="firstname">FIRST NAME</label>
+        </div>
+        <div *ngIf="signupForm.controls['firstname'].touched && (signupForm.controls['firstname'].invalid)" class="error-msg">
+         
+          @if(signupForm.controls['firstname'].errors?.['pattern']){
+            *Only albphabets allowed
+          }@else if(signupForm.controls['firstname'].errors?.['maxlength']){
+            *Maximum 15 characters allowed.
+          }
+          @else {
+            *Required.
+          }
+        </div>
+       </div>
+       <div style="margin-left: 2px;">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control input-el"
+            id="lastname"
+            placeholder="Last Name"
+            formControlName  ='lastname'
+            required
+          />
+          <label for="lastname">LAST NAME</label>
+        </div>
+        <div *ngIf="signupForm.controls['lastname'].touched && (signupForm.controls['lastname'].invalid)" class="error-msg">
+     
+          @if(signupForm.controls['lastname'].errors?.['pattern']){
+            *Only albphabets allowed
+          }@else if(signupForm.controls['lastname'].errors?.['maxlength']){
+            *Maximum 8 characters allowed.
+          }
+          
+          @else {
+            *Required.
+          }
+        </div>
+      </div>
+    </div>
+    <div class="form-floating">
+      <input type="date" class="form-control input-el" id="dob" placeholder="Date of irth" required formControlName = 'dob'>
+      <label for="dob">Date of Birth</label>
+    </div>
+    <div *ngIf="signupForm.controls['dob'].touched && (signupForm.controls['dob'].invalid || signupForm.controls['dob'].errors)" class="error-msg">
+      *Required
+    </div>
+    <div class="form-floating">
+        <input type="email" class="form-control input-el" id="email" placeholder="name@example.com" required formControlName = 'email'>
+        <label for="email">Email address</label>
+      </div>
+      <div *ngIf="signupForm.controls['email'].touched && (signupForm.controls['email'].invalid)" class="error-msg">
+        @if (signupForm.controls['email'].errors?.['pattern']) {
+          Enter a valid email addres.
+        }@else {
+          *Required.
+        }
+      </div>
+  
+      <div class="form-floating">
+        <input type="password" class="form-control input-el" id="password" placeholder="Password" required formControlName = 'password' > 
+        <label for="password">Password</label>
+      </div>
+      <div *ngIf="signupForm.controls['password'].touched && (signupForm.controls['password'].invalid)" class="error-msg">
+        
+        @if ( signupForm.controls['password'].errors?.['minlength']) {
+          *Password must be at least 5 characters long.
+        }
+        @else if (signupForm.controls['password'].errors?.['pattern']) {
+          *Password must contain alphabets, numbers, and special character.
+        }
+        @else {
+           *Required.
+        }
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control input-el" id="confirmPassword" placeholder="Password" required formControlName = 'confirmPassword' (input)="onChangeConfirmPassword($event)" [disabled]="true"> 
+        <label for="confirmPassword">Confirm Password</label>
+      </div>
+      <div *ngIf="signupForm.controls['confirmPassword'].touched" class="error-msg">
+        @if( signupForm.controls['confirmPassword'].invalid ){
+          *Required.
+        }
+         @if(!passwordDidMatch &&signupForm.controls['confirmPassword'].valid ){
+         *Password not mateched.
+        }
+      </div>
+     
+      <div class="progres-container">
+      <div class="progress-bar" [style.width]="progress + '%'">
+         
+      </div>
+      <span class="progress">{{progress+'%'}}</span>  
+    </div>
+      <button type="submit" class="login-btn">Sign Up</button>
+      <p class="signup">Already have an account ? <a [routerLink] = "['/login']">Sign in Here.</a></p>
+    </form>
+  </div>
+</div>
+
+
+

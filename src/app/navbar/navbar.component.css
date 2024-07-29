@@ -1,0 +1,189 @@
+.website-logo {
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    border-radius: 20px;
+}
+
+.logo-container {
+    display: flex;
+    margin-left: 20px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00000f;
+    padding: 3px;
+
+}
+
+.excise-dept-heading {
+    font-family: 'open sans';
+    color: #fff;
+    font-size: xx-large;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.excise-dept-heading:hover {
+    /* background-image: linear-gradient(to right, #F98400, #800080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    border-radius: 15px;
+    color: rgb(112, 48, 231);
+}
+
+
+.nav-ul-el {
+    display: flex;
+    align-items: center;
+}
+
+.nav-li-el {
+    list-style: none;
+    margin-right: 10px;
+
+}
+
+.nav-anchor-el {
+    background-color: transparent;
+    padding: 5px;
+    height: 30px;
+    font-family: 'open sans';
+    cursor: pointer;
+    color: #ffffff;
+    border-width: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+}
+
+.nav-anchor-el:hover {
+    /* background-image: linear-gradient(to right, #F98400, #800080);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    border-radius: 15px;
+     border: 2px solid  rgb(112, 48, 231);
+
+}
+
+.nav-lisence-btn {
+    background-color:transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px;
+    cursor: pointer;
+    border-width: 0px;
+    color: #ffffff;
+}
+
+.nav-lisence-btn:hover {
+    /* background-image: linear-gradient(to right, #F98400, #800080);
+    /* Orange to Purple */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+   
+    border-radius: 15px;
+    border: 2px solid  rgb(112, 48, 231);
+
+}
+
+.nav-login-btn {
+    background-color: transparent;
+    border-width: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+
+
+}
+
+.nav-login-btn:hover {
+    /* color: #0463fa; */
+    /* background-image: linear-gradient(to right, #F98400, #800080); */
+    /* Orange to Purple */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    border-radius: 15px;
+    
+
+}
+
+.nav-select-el {
+    border-width: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+    height: 30px;
+    color: #fff;
+
+}
+
+.nav-select-el:hover {
+    /* background-image: linear-gradient(to right, #F98400, #800080); */
+    /* Orange to Purple */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    border-radius: 15px;
+    border: 2px solid  rgb(112, 48, 231);
+}
+
+.profile-icon {
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px dotted #00000f;
+    color: #2543af;
+}
+
+.profile-icon:hover {
+    /* background-image: linear-gradient(to right, #F98400, #800080);
+    /* Orange to Purple */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 15px; */ 
+    /* border: 2px solid #800080; */
+     /* color:  rgb(112, 48, 231) !important;  */
+}
+
+
+@media screen and (max-width : 767px) {
+
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+
+    }
+
+    .nav-ul-el {
+        display: flex;
+        justify-content: space-around;
+        flex-shrink: 2;
+        width: 90%;
+
+    }
+
+    .nav-li-el {
+        margin-right: 5px;
+    }
+
+    .nav-select-el {
+        font-size: 10px;
+        max-width: 90px;
+        display: flex;
+        flex-shrink: 1;
+    }
+
+    .nav-lisence-btn {
+        font-size: small;
+    }
+}

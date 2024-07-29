@@ -1,0 +1,63 @@
+<div class="login-component">
+  <div class="form-container">
+    <div>
+      <h1 class="text-center" class="main-heading">TELANGANA EXCISE DEPARTMENT</h1>
+    </div>
+    <h1 class="form-heading">LOGIN</h1>
+    <form class="form-el" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="form-floating input-container">
+        <input
+          type="email"
+          class="form-control input-el"
+          id="floatingInput"
+          placeholder="name@example.com"
+          formControlName="username"
+          required
+        />
+        <label for="floatingInput">Email address</label>
+
+        <p
+          class="username-error"
+          *ngIf="
+            loginForm.controls['username'].touched &&
+            loginForm.controls['username'].invalid
+          "
+        >
+          *Username required
+        </p>
+      </div>
+
+      <div class="form-floating input-container">
+       
+        <input
+          type ="{{showpassword ? 'text' : 'password' }}"
+          class = "form-control input-el"
+          id="floatingPassword"
+          placeholder="Password"
+          formControlName="password"
+          required
+          
+        />
+       <div class="text-white"><input type="checkbox" #checkbox  (change)="onShowPassword()"> {{showpassword ? 'Hide' : 'Show' }} Password</div>
+       
+        <label for="floatingPassword">Password</label>
+        <div class="username-error" *ngIf="passwordError">{{passwordError}}</div>
+        <div
+        *ngIf="
+          loginForm.controls['password'].errors &&
+          loginForm.controls['password'].touched
+        "
+      >
+        <p class="username-error">*Password required</p>
+        <p *ngIf="(isSubmitted&&(!loginForm.controls['password'].invalid || !loginForm.controls['username'].invalid))" class="username-error">Username and Passsord not mateched.</p>
+        <p class="username-error" *ngIf="(loginForm.controls['password'].invalid && loginForm.controls['username'].invalid && isSubmitted)" >Enter Username and Passsord to Sign In</p>
+       
+      </div>
+      
+      </div>
+     
+      <button type="submit" class="login-btn">Login</button>
+      <p class="signup">Don't have an account ? <a [routerLink] = "['/signup']">Sign Up in Here.</a></p>
+    </form>
+  </div>
+</div>

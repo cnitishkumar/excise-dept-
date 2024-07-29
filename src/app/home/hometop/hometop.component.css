@@ -1,0 +1,84 @@
+.main-container{
+    background-image: linear-gradient(195deg, #172a74 , #21a9af);
+    background-size: cover;
+    height: 100vh;
+    padding: 30px;
+    padding-top:70px ;
+
+}
+.excise-dept-heading{
+    color: #fff;
+    font-weight: 600;
+    font-size: xx-larger;
+}
+.sub-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+     
+}
+.sub-div1{
+    border-left:2px solid #fff;
+    padding-left:10px;
+    margin-right: 10px;
+    height: 130px;
+    padding-left: 20px;
+    padding-right: 60px;
+
+
+}
+.excise{
+color: #1B2C51;
+font-size:x-large;
+font-weight: 700;
+
+}
+.count{
+    font-size: xx-large;
+    color: #ffffff;
+    font-weight: bold;
+}
+.month{
+
+    color: #EFF5FF;
+    font-weight: 400;
+    font-size: medium;
+}
+
+.ts-map-container{
+   margin-left: auto;
+   
+  
+}
+.ts-map{
+    max-width: 300px;
+
+}
+.select-el-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.select-el{
+    padding: 8px;
+    background-color: #ffffff;
+    color: #000000;
+    font: 15px areal;
+    margin-left: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 767px) {
+    .ts-map{
+    display: none;
+    }
+    
+    .sub-div{
+        display: flex;
+        flex-direction: column;
+       
+    }
+    .sub-div1{
+        margin-top: 10px;
+    }
+}

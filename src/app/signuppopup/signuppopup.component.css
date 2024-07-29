@@ -1,0 +1,33 @@
+.pop-container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Bre Serif';
+  
+   min-width: 350px; 
+   max-height:80vh;
+   overflow-y: auto;
+   
+}
+
+h3{
+    font-size: larger;
+    color: rgb(112, 48, 231);
+    text-align: center;
+}
+
+.close-btn {
+    background-color: transparent;
+    background-color: rgb(112, 48, 231);
+    /* border: 2px solid  rgb(112, 48, 231); */
+    color: #ffffff;
+    border-width: 0px;
+    width: 100px;
+    height: 40px;
+   border-radius: 10px;
+   cursor: pointer;
+   margin: 5px;
+}
+
+
+

@@ -1,0 +1,46 @@
+<nav class="nav-bar">
+  <div class="logo-container" [routerLink]="['/home']">
+    <img
+      src="https://pbs.twimg.com/profile_images/1130743853680476160/RZ_Imfcv_400x400.jpg"
+      class="website-logo"
+      alt="applogo"
+    />
+    <h1 class="excise-dept-heading">Excise Department</h1>
+  </div>
+  <ul class="nav-ul-el">
+    <li class="nav-li-el">
+      <a class="nav-anchor-el" [routerLink]="['/']"> Home </a>
+    </li>
+
+    <li class="nav-li-el">
+      <select class="nav-select-el" >
+       
+        <option class="nav-select-option">Excise Dashboard 1</option>
+        <option class="nav-select-option">Excise Dashboard 2</option>
+        <option class="nav-select-option">Enforcement Dashboard 1</option>
+        <option class="nav-select-option">Enforcement Dashboard 2</option>
+        <option class="nav-select-option">InSight Dashboard 1</option>
+        <option class="nav-select-option">User Lisence Status</option>
+      </select>
+    </li>
+
+    <li class="nav-li-el">
+      <!-- <button class="nav-btn" type="button">Login</button> -->
+      <a class="nav-anchor-el" [routerLink]="['/login']">
+        <button type="button" class="nav-login-btn">Login</button>
+      </a>
+    </li>
+
+    <li class="nav-li-el">
+      <a [routerLink]="['/newLicense']">
+        <button class="nav-lisence-btn" type="button">New License</button>
+      </a>
+    </li>
+
+    <!-- <li class="nav-li-el">
+      <a routerLink="profilePage">
+        <i class="fa fa-regular fa-user profile-icon"></i>
+      </a>
+    </li> -->
+  </ul>
+</nav>

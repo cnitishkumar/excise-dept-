@@ -1,0 +1,12 @@
+<div class="pop-container">
+    <h3>{{popupHeading | uppercase}}</h3>
+    <div>
+    <p *ngFor="let item of signupKeysArray">{{ item|customepipe }} : {{signupData[item]}}</p>       
+</div>
+<div>
+    <div>
+<button (click)="closePopup()" class="close-btn">Close</button>
+<button class="close-btn" (click)="onClickConfirmSubmit()">Submit</button>
+</div>
+</div>
+</div>
