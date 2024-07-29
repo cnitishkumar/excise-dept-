@@ -17,9 +17,9 @@
 }
 
 .home-btn {
-    background-color:  rgb(112, 48, 231) !important; 
+    background-color: rgb(112, 48, 231) !important;
     color: #ffffff;
-    font-family:'Roboto';
+    font-family: 'Roboto';
     border-width: 0px;
     font-size: medium;
     margin-left: auto;
@@ -29,9 +29,10 @@
     border-radius: 10px;
 
 }
-.home-btn:hover{
+
+.home-btn:hover {
     background-color: transparent !important;
-    border: 2px solid  rgb(112, 48, 231);
+    border: 2px solid rgb(112, 48, 231);
     font-size: medium;
 }
 
@@ -61,10 +62,10 @@ h4 {
     border-radius: 20px;
     padding: 40px;
     margin-bottom: 40px;
-    background-color:#E0E2EC;
+    background-color: #E0E2EC;
 }
 
-h3{
+h3 {
     font-size: 27px;
 }
 
@@ -81,7 +82,7 @@ a {
 
 
 .register-btn {
-    background-color:rgb(112, 48, 231);
+    background-color: rgb(112, 48, 231);
     margin: 10px;
     color: #fff;
     font-size: medium;
@@ -158,75 +159,19 @@ label {
 
 
 
-.label-el-hidden {
-    display: none;
-}
-
-.shop-type-select-container {
-    width: 100%;
-    height: 60px;
-}
 
 
-.address-input-container {
-    width: 100%;
-    border-width: 0px;
-    height: 60px;
-    border-bottom: 2px solid grey;
-}
-
-.adrees-input-el {
-    height: 45px;
-    outline: none;
-    background-color: transparent;
-    font-size: medium;
-    border-width: 0px;
-}
-
-.hide-placeholder::placeholder {
-    opacity: 0;
-}
-
-.custom {
-    background-color: transparent;
-    border-radius: 0px;
-    border-bottom: 2px solid grey;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.custom:focus {
-    box-shadow: none;
-    border-bottom: 2px solid rgb(112, 48, 231);
-    transition: 0.2s;
-
-}
 
 
-.error {
-    border-bottom: 2px solid rgb(228, 15, 15) !important;
-    transition: 0.5s;
-}
 
-.form-float-height {
-    height: 60px;
-    width: 30%;
 
-}
 
-.name-father-dob-container {
-    height: 60px;
-    /* border: 2px solid red; */
-    display: flex;
-    justify-content: space-between;
-}
 
-.personal-div-name {
 
-    display: inline-flex;
-    margin: auto;
 
-}
+
+
+
 
 .qualification-container {
     width: 48%;
@@ -238,22 +183,14 @@ label {
 
 }
 
-.icome-email-container {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .income {
     width: 24.5%;
 }
 
-.address-container {
-    width: 49%;
-}
 
-.postelcode-container {
-    width: 24.5%;
-}
+
 
 .address-main-container {
     display: flex;
@@ -261,51 +198,18 @@ label {
     align-items: center;
 }
 
-.select-dist {
-
-    padding: 0px;
-    margin: 0px;
-    color: grey;
-    background-color: transparent;
-    outline: none;
-    margin-bottom: -5px;
-    height: 30px;
-    padding: 0px;
-}
-
-.select-dist:focus {
-    border-width: 0px;
-    box-shadow: none;
-
-}
-
-.label-dist {
-    font-size: medium;
-    width: fit-content;
-    height: fit-content;
-    padding: 2px;
-    border-radius: 5px;
-
-}
-
-
 .message {
     text-align: center;
 
 }
 
-.error-msg{
+.error-msg {
     color: red;
     font-size: small;
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.shopAddress-name {
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-}
 
 
 .footer {
@@ -317,65 +221,74 @@ label {
 
 }
 
-.shop-dist{
-    background-color: transparent;
-    
-}
 
-.shop-dist:focus{
-    border: 0px;
-    box-shadow: none;
 
-}
 
 .copyright-caution {
     color: #fff;
     font-size: medium;
 }
-a{
-   color:rgb(112, 48, 231);
+
+a {
+    color: rgb(112, 48, 231);
 }
 
-.inpu-el-max-width{
+.inpu-el-max-width {
     width: 100%;
     margin-bottom: 0px;
 }
 
-.input-el-half-width{
+.input-el-half-width {
     width: 48%;
 }
 
-.shopname-address-container{
+.shopname-address-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-.shopname-container{
-    width: 48%;
-}
-#input{
-    background-color: transparent !important;
-}
-.personel-details-container{
-    /* display: flex;
-    justify-content: space-between; */
-}
-.personel-details-sub-div{
+
+.shopname-container {
     width: 48%;
 }
 
-.city-dist-postel-container{
+#input {
+    background-color: transparent !important;
+}
+
+.personel-details-container {
     display: flex;
     justify-content: space-between;
 }
-.city-container{
+
+.personel-details-sub-div {
+    width: 48%;
+}
+
+.city-dist-postel-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-container {
     width: 30%;
 }
 
-.personal-details-sub-div{
+.personal-details-sub-div {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
 
+.perssonal-main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.personal-sub-div {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}

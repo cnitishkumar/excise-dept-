@@ -5,15 +5,21 @@
     </a>
 
     <div class="banner-contetnt">
-      <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Emblem_of_Telangana.svg" class="ts-emblem" />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/6/61/Emblem_of_Telangana.svg"
+        class="ts-emblem"
+      />
 
       <h2 class="newlicense-heading">New License Registration</h2>
 
-      <form class="form-el" [formGroup]="newLicenseForm" (ngSubmit)="onSubmit()">
-        <h3>Shop Details</h3>
-
+      <form
+        class="form-el"
+        [formGroup]="newLicenseForm"
+        (ngSubmit)="onSubmit()"
+      >
         <!-- shop type select -->
         <div>
+          <h3>Shop Details</h3>
           <mat-form-field class="inpu-el-max-width">
             <mat-label>Select</mat-label>
             <mat-select formControlName="shopType">
@@ -22,10 +28,13 @@
               <mat-option value="wine Shop">Wine Shop</mat-option>
             </mat-select>
           </mat-form-field>
-          <div class="error-msg" *ngIf="
+          <div
+            class="error-msg"
+            *ngIf="
               newLicenseForm.controls['shopType'].touched &&
               newLicenseForm.controls['shopType'].errors
-            ">
+            "
+          >
             *Required
           </div>
         </div>
@@ -38,10 +47,13 @@
               <input matInput formControlName="shopName" />
             </mat-form-field>
 
-            <div class="error-msg" *ngIf="
+            <div
+              class="error-msg"
+              *ngIf="
                 newLicenseForm.controls['shopName'].touched &&
                 newLicenseForm.controls['shopName'].errors
-              ">
+              "
+            >
               *Required
             </div>
           </div>
@@ -55,10 +67,13 @@
                 <mat-option value="rangaredy">Rangareddy</mat-option>
               </mat-select>
             </mat-form-field>
-            <div class="error-msg" *ngIf="
+            <div
+              class="error-msg"
+              *ngIf="
                 newLicenseForm.controls['shopDistrict'].touched &&
                 newLicenseForm.controls['shopDistrict'].errors
-              ">
+              "
+            >
               *Required
             </div>
           </div>
@@ -71,146 +86,245 @@
           <mat-label>Address</mat-label>
           <input matInput formControlName="shopAddress" />
         </mat-form-field>
-        <div class="error-msg" *ngIf="
+        <div
+          class="error-msg"
+          *ngIf="
             newLicenseForm.controls['shopAddress'].touched &&
             newLicenseForm.controls['shopAddress'].errors
-          ">
+          "
+        >
           *Required
         </div>
 
         <!-- Personel details -->
         <h3>Personel Details</h3>
-        <div class="personel-details-container">
-          
-          <div class="personel-details-sub-div">
-            <!-- name -->
 
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Name</mat-label>
-              <input matInput formControlName="personName" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['personName'].touched &&
-                newLicenseForm.controls['personName'].errors
-              ">
-              <div *ngIf="newLicenseForm.controls['personName'].errors?.['required']" class="error-msg">
-                *Required
+        <!-- PERSONEL DETAILS CONTAINER -->
+        <div>
+          <div class="perssonal-main-container">
+            <div class="personal-sub-div">
+              <mat-form-field class="inpu-el-max-width">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="personName" />
+              </mat-form-field>
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['personName'].touched &&
+                  newLicenseForm.controls['personName'].errors
+                "
+              >
+                <div
+                  *ngIf="newLicenseForm.controls['personName'].errors?.['required']"
+                  class="error-msg"
+                >
+                  *Required
+                </div>
               </div>
             </div>
-            <div *ngIf="newLicenseForm.controls['personName'].errors?.['pattern']" class="error-msg">
-              *Only Letter allowed
-            </div>
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Father Name</mat-label>
-              <input matInput formControlName="fatherName" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['fatherName'].touched &&
-                newLicenseForm.controls['fatherName'].errors
-              ">
-              *Required
-            </div>
 
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Date of Birth</mat-label>
-              <input matInput type="date" formControlName="dob" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['dob'].touched &&
-                newLicenseForm.controls['dob'].errors
-              ">
-              *Required
-            </div>
-
-            <!-- qualification -->
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Qualification</mat-label>
-              <input matInput formControlName="qualification" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['qualification'].touched &&
-                newLicenseForm.controls['qualification'].errors
-              ">
-              *Required
+            <div class="personal-sub-div">
+              <div>
+                <mat-form-field class="inpu-el-max-width">
+                  <mat-label>Father Name</mat-label>
+                  <input matInput formControlName="fatherName" />
+                </mat-form-field>
+              </div>
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['fatherName'].touched &&
+                  newLicenseForm.controls['fatherName'].errors
+                "
+              >
+                *Required
+              </div>
             </div>
           </div>
+          <!-- ------ -->
 
-          <div class="personel-details-sub-div">
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Occupation</mat-label>
-              <input matInput formControlName="occupation" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['occupation'].touched &&
-                newLicenseForm.controls['occupation'].errors
-              ">
-              *Required
-            </div>
-
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Income</mat-label>
-              <input matInput type="number" formControlName="income" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['income'].touched &&
-                newLicenseForm.controls['income'].errors
-              ">
-              *Required
-            </div>
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Contact</mat-label>
-              <input matInput type="number" formControlName="contact"  maxlength="10"/>
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['contact'].touched &&
-                newLicenseForm.controls['contact'].errors
-              ">
-              *Required
-            </div>
-
-            <mat-form-field class="inpu-el-max-width">
-              <mat-label>Email</mat-label>
-              <input matInput type="email" formControlName="email" />
-            </mat-form-field>
-            <div class="error-msg" *ngIf="
-                newLicenseForm.controls['email'].touched &&
-                newLicenseForm.controls['email'].errors
-              ">
-              <div *ngIf="newLicenseForm.controls['email'].errors['pattern']" class="error-msg">
-                *Enter valid email
+          <div class="perssonal-main-container">
+            <div class="personal-sub-div">
+              <div>
+                <mat-form-field class="inpu-el-max-width">
+                  <mat-label>Date of Birth</mat-label>
+                  <input matInput type="date" formControlName="dob" />
+                </mat-form-field>
               </div>
-              <div *ngIf="newLicenseForm.controls['email'].errors?.['required']" class="error-msg">
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['dob'].touched &&
+                  newLicenseForm.controls['dob'].errors
+                "
+              >
                 *Required
+              </div>
+            </div>
+            <!-- _____ -->
+            <!-- 
+qualification -->
+
+            <div class="personal-sub-div">
+              <div>
+                <mat-form-field class="inpu-el-max-width">
+                  <mat-label>Qualification</mat-label>
+                  <input matInput formControlName="qualification" />
+                </mat-form-field>
+              </div>
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['qualification'].touched &&
+                  newLicenseForm.controls['qualification'].errors
+                "
+              >
+                *Required
+              </div>
+            </div>
+          </div>
+          <!-- ----- -->
+          <div class="perssonal-main-container">
+            <div class="personal-sub-div">
+              <mat-form-field class="inpu-el-max-width">
+                <mat-label>Occupation</mat-label>
+                <input matInput formControlName="occupation" />
+              </mat-form-field>
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['occupation'].touched &&
+                  newLicenseForm.controls['occupation'].errors
+                "
+              >
+                *Required
+              </div>
+            </div>
+
+            <!-- occupation -->
+
+            <div class="personal-sub-div">
+              <div>
+                <mat-form-field class="inpu-el-max-width">
+                  <mat-label>Income</mat-label>
+                  <input matInput type="number" formControlName="income" />
+                </mat-form-field>
+              </div>
+              <div
+                class="error-msg"
+                *ngIf="
+                  newLicenseForm.controls['income'].touched &&
+                  newLicenseForm.controls['income'].errors
+                "
+              >
+                *Required
+              </div>
+            </div>
+          </div>
+          <div class="perssonal-main-container">
+            <div class="personal-sub-div">
+              <mat-form-field class="inpu-el-max-width">
+                <mat-label>Contact</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  formControlName="contact"
+                  maxlength="10"
+                />
+              </mat-form-field>
+              <div>
+                <div
+                  class="error-msg"
+                  *ngIf="
+                    newLicenseForm.controls['contact'].touched &&
+                    newLicenseForm.controls['contact'].errors
+                  "
+                >
+                  *Required
+                </div>
+              </div>
+            </div>
+
+            <div class="personal-sub-div">
+              <div>
+                <mat-form-field class="inpu-el-max-width">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" formControlName="email" />
+                </mat-form-field>
+              </div>
+              <div>
+                <div
+                  class="error-msg"
+                  *ngIf="
+                    newLicenseForm.controls['email'].touched &&
+                    newLicenseForm.controls['email'].errors
+                  "
+                >
+                  <div
+                    *ngIf="newLicenseForm.controls['email'].errors['pattern']"
+                    class="error-msg"
+                  >
+                    *Enter valid email
+                  </div>
+                  <div
+                    *ngIf="newLicenseForm.controls['email'].errors?.['required']"
+                    class="error-msg"
+                  >
+                    *Required
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- PERSONEL DETAILS CONTAINER END -->
+
+        <!-- Address -->
         <div class="address-main-div">
+          <h3>Address</h3>
           <div class="city-dist-postel-container">
             <div class="city-container">
               <mat-form-field class="inpu-el-max-width">
                 <mat-label>City</mat-label>
                 <input matInput formControlName="city" />
               </mat-form-field>
-              <div class="error-msg" *ngIf="
+              <div
+                class="error-msg"
+                *ngIf="
                   newLicenseForm.controls['city'].touched &&
                   newLicenseForm.controls['city'].errors
-                ">
+                "
+              >
                 *Required
               </div>
             </div>
             <div class="city-container">
               <mat-form-field class="inpu-el-max-width">
                 <mat-label>Postel Code</mat-label>
-                <input matInput formControlName="postelCode"/>
+                <input matInput formControlName="postelCode" />
               </mat-form-field>
-              <div class="error-msg" *ngIf="
+              <div
+                class="error-msg"
+                *ngIf="
                   newLicenseForm.controls['postelCode'].touched &&
                   newLicenseForm.controls['postelCode'].errors
-                ">
-                <div *ngIf="newLicenseForm.controls['postelCode'].errors['required']">*Required</div>
+                "
+              >
                 <div
-                  *ngIf="(newLicenseForm.controls['postelCode'].errors['pattern'] || newLicenseForm.controls['postelCode'].errors['minlength'] || newLicenseForm.controls['postelCode'].errors['maxlength'])">
+                  *ngIf="
+                    newLicenseForm.controls['postelCode'].errors['required']
+                  "
+                >
+                  *Required
+                </div>
+                <div
+                  *ngIf="
+                    newLicenseForm.controls['postelCode'].errors['pattern'] ||
+                    newLicenseForm.controls['postelCode'].errors['minlength'] ||
+                    newLicenseForm.controls['postelCode'].errors['maxlength']
+                  "
+                >
                   Enter a valid number 6 digit number
                 </div>
               </div>
@@ -224,31 +338,39 @@
                   <mat-option value="Vikarabad">Vikarabad</mat-option>
                 </mat-select>
               </mat-form-field>
-              <div class="error-msg" *ngIf="
+              <div
+                class="error-msg"
+                *ngIf="
                   newLicenseForm.controls['district'].touched &&
                   newLicenseForm.controls['district'].errors
-                ">
+                "
+              >
                 *Required
               </div>
             </div>
           </div>
-          <h3>Address</h3>
+
           <mat-form-field class="inpu-el-max-width">
             <mat-label>Address</mat-label>
             <input matInput formControlName="address" />
           </mat-form-field>
-          <div class="error-msg" *ngIf="
+          <div
+            class="error-msg"
+            *ngIf="
               newLicenseForm.controls['address'].touched &&
               newLicenseForm.controls['address'].errors
-            ">
+            "
+          >
             *Required
           </div>
         </div>
-        <p [ngClass]="{
+        <p
+          [ngClass]="{
             message: true,
             'text-success': submitSuccess,
             'text-primary': !submitSuccess
-          }">
+          }"
+        >
           {{ message }}
         </p>
         <button class="register-btn" type="submit">Register</button>
@@ -261,21 +383,6 @@
           By clicking submit you are agreeing to the terms and conditions
         </p>
         <hr class="hr2" />
-         
-
-        <!-- PERSONEL DETAILS CONTAINER -->
-
-        <div class="personel-details-container">
-
-           <div class="pesronel-">
-
-
-           </div>
-
-        </div>
-
-        
-        <!-- PERSONEL DETAILS CONTAINER END -->
       </form>
     </div>
 
