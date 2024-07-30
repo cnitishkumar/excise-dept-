@@ -9,16 +9,17 @@ import { FooterComponent } from '../footer/footer.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatDatepicker, MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {provideNativeDateAdapter} from '@angular/material/core';
 
 
 
 @Component({
   selector: 'app-newlicense',
   standalone: true,
-  imports: [RouterLink, FormsModule, ReactiveFormsModule, NgClass, NgStyle, CommonModule ,FooterComponent,MatFormFieldModule,MatInputModule,MatSelectModule,MatDatepickerModule,MatDatepicker],
+  imports: [RouterLink, FormsModule, ReactiveFormsModule, NgClass, NgStyle, CommonModule ,FooterComponent,MatFormFieldModule,MatInputModule,MatSelectModule,MatDatepickerModule,],
   templateUrl: './newlicense.component.html',
+  providers: [provideNativeDateAdapter()],
   styleUrl: './newlicense.component.css'
 })
 export class NewlicenseComponent {
@@ -201,10 +202,10 @@ constructor(private dialogRef : MatDialog , private popup:PopupserviceService,){
     income: new FormControl('1000000', [Validators.required]),
     experience: new FormControl('1', [Validators.required]),
     email: new FormControl('nitish@gmail.com', [Validators.required,Validators.pattern(this.emailFormat)]),
-    contact: new FormControl(987654321, [Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+    contact: new FormControl(9876543219, [Validators.required,Validators.minLength(10),Validators.maxLength(10),Validators.pattern('^[0-9]{10}$')]),
     city: new FormControl('HYD', [Validators.required]),
     address: new FormControl('HYD', [Validators.required]),
-    postelCode: new FormControl(509336, [Validators.required,Validators.minLength(6),Validators.maxLength(6), Validators.pattern(/^\d{6}$/)]),
+    postelCode: new FormControl(509336, [Validators.required,Validators.minLength(6),Validators.maxLength(6), Validators.pattern('^[1-9]{1}[0-9]{5}$')]),
     district: new FormControl('', [Validators.required])
   })
 

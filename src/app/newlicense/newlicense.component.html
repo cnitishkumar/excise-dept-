@@ -56,6 +56,7 @@
             >
               *Required
             </div>
+
           </div>
 
           <div class="shopname-container">
@@ -120,6 +121,12 @@
                 >
                   *Required
                 </div>
+                <div
+                  *ngIf="newLicenseForm.controls['personName'].errors?.['pattern']"
+                  class="error-msg"
+                >
+                 *Only Letters allowed.
+                </div>
               </div>
             </div>
 
@@ -137,7 +144,12 @@
                   newLicenseForm.controls['fatherName'].errors
                 "
               >
+               <div *ngIf="newLicenseForm.controls['fatherName'].errors?.['required']">
                 *Required
+               </div>
+               <div *ngIf="newLicenseForm.controls['fatherName'].errors?.['pattern']">
+                *Only Letters allowed.
+               </div>
               </div>
             </div>
           </div>
@@ -148,7 +160,9 @@
               <div>
                 <mat-form-field class="inpu-el-max-width">
                   <mat-label>Date of Birth</mat-label>
-                  <input matInput type="date" formControlName="dob" />
+                  <input matInput [matDatepicker]="picker" formControlName="dob">
+                  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div
@@ -227,9 +241,10 @@ qualification -->
                 <mat-label>Contact</mat-label>
                 <input
                   matInput
-                  type="number"
+                   type="text"
+                   maxlength="10"
                   formControlName="contact"
-                  maxlength="10"
+                 
                 />
               </mat-form-field>
               <div>
@@ -240,7 +255,18 @@ qualification -->
                     newLicenseForm.controls['contact'].errors
                   "
                 >
-                  *Required
+                   <div *ngIf="newLicenseForm.controls['contact'].errors?.['required']">
+                    *Required
+                   </div>
+                  <div
+                  *ngIf="
+                    newLicenseForm.controls['contact'].errors['pattern'] ||
+                    newLicenseForm.controls['contact'].errors['minlength'] ||
+                    newLicenseForm.controls['contact'].errors['maxlength']
+                  "
+                >
+                  *Enter a valid 10 digit mobile number
+                </div>
                 </div>
               </div>
             </div>
@@ -264,7 +290,7 @@ qualification -->
                     *ngIf="newLicenseForm.controls['email'].errors['pattern']"
                     class="error-msg"
                   >
-                    *Enter valid email
+                    *Enter valid email.
                   </div>
                   <div
                     *ngIf="newLicenseForm.controls['email'].errors?.['required']"
@@ -301,8 +327,8 @@ qualification -->
             </div>
             <div class="city-container">
               <mat-form-field class="inpu-el-max-width">
-                <mat-label>Postel Code</mat-label>
-                <input matInput formControlName="postelCode" />
+                <mat-label>Postal Code</mat-label>
+                <input matInput formControlName="postelCode" maxlength="6"/>
               </mat-form-field>
               <div
                 class="error-msg"
@@ -325,7 +351,7 @@ qualification -->
                     newLicenseForm.controls['postelCode'].errors['maxlength']
                   "
                 >
-                  Enter a valid number 6 digit number
+                  *Enter a valid 6 postal code.
                 </div>
               </div>
             </div>
